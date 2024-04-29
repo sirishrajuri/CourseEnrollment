@@ -10,13 +10,13 @@ public class CourseStudent {
 
     @Id
     @ManyToOne
-    @JoinColumn(name="courseCode")
-    private Course course;
+    @JoinColumn(name = "courseCode")
+    private Course courseCode;
 
     @Id
     @ManyToOne
-    @JoinColumn(name="studentId")
-    private Student student;
+    @JoinColumn(name = "student_Id")
+    private Student studentId;
 
     private String grade;
 

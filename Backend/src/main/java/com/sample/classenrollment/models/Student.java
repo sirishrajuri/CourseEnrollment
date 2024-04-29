@@ -6,9 +6,12 @@ import java.util.*;
 
 @Entity
 @Data
+@Table(name = "Student")
 public class Student {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "student_id")
     private Long studentId;
 
     private String name;
@@ -17,6 +20,7 @@ public class Student {
 
     private Date expectedGraduationDate;
 
-    @ManyToMany
-    private Set<Course> classes = new HashSet<>();
+    @OneToMany(mappedBy = "studentId")
+    private Set<CourseStudent> coursesTaken;
+
 }
